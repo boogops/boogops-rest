@@ -22,7 +22,7 @@ public class ThingsController : Controller
     [HttpGet("{id}")]
     public IActionResult Get(string id)
     {
-        var retval = _db.Units
+        var retval = _db.Things
             .ProjectTo<ThingDto>(_mapper.ConfigurationProvider)
             .SingleOrDefault(u => u.Id == id);
 

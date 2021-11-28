@@ -9,7 +9,7 @@ public class BoogopsDbContext : DbContext
     {
     }
 
-    public DbSet<Thing> Units { get; set; }
+    public DbSet<Thing> Things { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
