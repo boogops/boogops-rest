@@ -4,16 +4,14 @@ EXPOSE 80
 EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
-WORKDIR /src
-COPY ["src/Boogops.Rest/Boogops.Rest.csproj", "Boogops.Rest/"]
-COPY ["src/Boogops.Common/Boogops.Common.csproj", "Boogops.Common/"]
+COPY ["src/Boogops.Rest/Boogops.Rest.csproj", "src/Boogops.Rest/"]
+COPY ["src/Boogops.Common/Boogops.Common.csproj", "src/Boogops.Common/"]
 RUN dotnet restore "src/Boogops.Rest/Boogops.Rest.csproj"
 COPY . .
-WORKDIR "/src/Boogops.Rest"
-RUN dotnet build "Boogops.Rest.csproj" -c Release -o /app/build
+RUN dotnet build "src/Boogops.Rest/Boogops.Rest.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "Boogops.Rest.csproj" -c Release -o /app/publish
+RUN dotnet publish "src/Boogops.Rest/Boogops.Rest.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
