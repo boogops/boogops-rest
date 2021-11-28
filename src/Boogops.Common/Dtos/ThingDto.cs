@@ -1,4 +1,4 @@
-namespace Boogops.Rest.Dtos;
+namespace Boogops.Common.Dtos;
 
 public class ThingDto
 {

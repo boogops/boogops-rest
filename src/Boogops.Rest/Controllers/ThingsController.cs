@@ -1,6 +1,6 @@
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
-using Boogops.Rest.Dtos;
+using Boogops.Common.Dtos;
 using Boogops.Rest.Models;
 using Microsoft.AspNetCore.Mvc;
 

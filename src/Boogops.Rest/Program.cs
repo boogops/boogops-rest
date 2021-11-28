@@ -1,3 +1,4 @@
+using Boogops.Rest.Configuration;
 using Boogops.Rest.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -7,6 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("boogops");
 builder.Services.AddDbContext<BoogopsDbContext>(options =>
     options.UseSqlServer(connectionString));
+builder.Services.AddAutoMapper(typeof(BoogopsProfile));
 
 builder.Services.AddControllers();
 

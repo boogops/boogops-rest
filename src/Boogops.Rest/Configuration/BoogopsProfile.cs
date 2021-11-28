@@ -1,5 +1,5 @@
 using AutoMapper;
-using Boogops.Rest.Dtos;
+using Boogops.Common.Dtos;
 using Boogops.Rest.Models;
 
 namespace Boogops.Rest.Configuration;
