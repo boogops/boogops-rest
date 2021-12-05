@@ -1,8 +1,6 @@
 name: .NET Build CI
 
-on:
-  push:
-    branches: [ dev ]
+on: [ push ]
 
 jobs:
   build:
@@ -20,6 +18,3 @@ jobs:
       
     - name: Build
       run: dotnet build --no-restore
-      
-    # - name: Test
-    #  run: dotnet test --no-build --verbosity normal
