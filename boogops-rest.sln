@@ -10,6 +10,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "solution", "solution", "{A0B50023-97D6-4B6F-B5F3-6A187F6A562E}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
+		.dockerignore = .dockerignore
+		Dockerfile = Dockerfile
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Boogops.Common", "src\Boogops.Common\Boogops.Common.csproj", "{FDCE3B91-F1F1-450C-BACA-BDAD82F8F071}"
