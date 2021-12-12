@@ -12,6 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "solution", "solution", "{A0
 		.gitignore = .gitignore
 		.dockerignore = .dockerignore
 		Dockerfile = Dockerfile
+		README.md = README.md
+		LICENSE = LICENSE
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Boogops.Common", "src\Boogops.Common\Boogops.Common.csproj", "{FDCE3B91-F1F1-450C-BACA-BDAD82F8F071}"
