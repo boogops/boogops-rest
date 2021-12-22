@@ -1,6 +1,6 @@
 using AutoMapper;
 using Boogops.Common.Dtos;
-using Boogops.Rest.Models;
+using Boogops.Stores;
 
 namespace Boogops.Rest.Configuration;
 

@@ -1,7 +1,4 @@
 using AutoMapper;
-using AutoMapper.QueryableExtensions;
-using Boogops.Common.Dtos;
-using Boogops.Rest.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Boogops.Rest.Controllers;
@@ -10,25 +7,24 @@ namespace Boogops.Rest.Controllers;
 [Route("api/[controller]")]
 public class ThingsController : Controller
 {
-    private readonly BoogopsDbContext _db;
     private readonly IMapper _mapper;
 
-    public ThingsController(BoogopsDbContext context, IMapper mapper)
+    public ThingsController(IMapper mapper)
     {
-        _db = context;
         _mapper = mapper;
     }
 
     [HttpGet("{id}")]
     public IActionResult Get(string id)
     {
-        var retval = _db.Things
-            .ProjectTo<ThingDto>(_mapper.ConfigurationProvider)
-            .SingleOrDefault(u => u.Id == id);
-
-        if (retval == null)
-            return NotFound();
-
-        return Ok(retval);
+        throw new NotImplementedException();
+        // var retval = _db.Things
+        //     .ProjectTo<ThingDto>(_mapper.ConfigurationProvider)
+        //     .SingleOrDefault(u => u.Id == id);
+        //
+        // if (retval == null)
+        //     return NotFound();
+        //
+        // return Ok(retval);
     }
 }
