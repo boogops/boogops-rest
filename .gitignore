@@ -5,3 +5,5 @@ bin
 .vscode
 
 appsettings.json
+
+node_modules
