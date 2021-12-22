@@ -1,6 +1,6 @@
 name: .NET Build CI
 
-on: [ push ]
+on: push
 
 jobs:
   build:
