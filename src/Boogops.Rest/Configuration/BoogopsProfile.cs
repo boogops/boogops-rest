@@ -1,6 +1,6 @@
 using AutoMapper;
 using Boogops.Common.Dtos;
-using Boogops.Stores;
+using Boogops.Stores.MongoDB;
 
 namespace Boogops.Rest.Configuration;
 

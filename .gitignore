@@ -1,9 +1,9 @@
-obj
-bin
-
 .idea
 .vscode
+.DS_Store
+
+obj
+bin
+*.user
 
 appsettings.json
-
-node_modules
