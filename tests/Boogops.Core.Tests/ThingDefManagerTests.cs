@@ -1,4 +1,5 @@
 using System.Threading.Tasks;
+using FluentAssertions;
 using Moq;
 using Xunit;
 
@@ -25,9 +26,10 @@ public class ThingDefManagerTests
             .ReturnsAsync(BoogopsManagerResult.Success);
 
         // Act
-        var created = await _thingDefManager.CreateAsync(testThingDef);
+        var result = await _thingDefManager.CreateAsync(testThingDef);
 
         // Assert
+        result.Should().Be(BoogopsManagerResult.Success);
         _thingDefStoreMock.Verify(x => x.CreateAsync(testThingDef), Times.Once);
     }
 }
