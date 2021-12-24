@@ -8,6 +8,6 @@ public class BoogopsProfile : Profile
 {
     public BoogopsProfile()
     {
-        CreateMap<Thing, ThingDto>();
+        CreateMap<ThingDef, ThingDefDto>();
     }
 }

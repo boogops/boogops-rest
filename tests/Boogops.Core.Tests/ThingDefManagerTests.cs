@@ -7,14 +7,15 @@ namespace Boogops.Core.Tests;
 
 public class ThingDefManagerTests
 {
+    private readonly ThingDefManager<TestThingDef> _thingDefManager;
+
+    private readonly Mock<ITestThingDefStore> _thingDefStoreMock;
+
     public ThingDefManagerTests()
     {
         _thingDefStoreMock = new Mock<ITestThingDefStore>();
         _thingDefManager = new ThingDefManager<TestThingDef>(_thingDefStoreMock.Object);
     }
-
-    private readonly Mock<ITestThingDefStore> _thingDefStoreMock;
-    private readonly ThingDefManager<TestThingDef> _thingDefManager;
 
     [Fact]
     public async Task Create_Creates()

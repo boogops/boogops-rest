@@ -5,11 +5,11 @@ namespace Boogops.Rest.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class ThingsController : Controller
+public class ThingDefsController : Controller
 {
     private readonly IMapper _mapper;
 
-    public ThingsController(IMapper mapper)
+    public ThingDefsController(IMapper mapper)
     {
         _mapper = mapper;
     }

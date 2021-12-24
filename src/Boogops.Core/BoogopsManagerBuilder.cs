@@ -4,12 +4,15 @@ namespace Boogops.Core;
 
 public class BoogopsManagerBuilder
 {
-    public BoogopsManagerBuilder(Type thingType, IServiceCollection services)
+    public BoogopsManagerBuilder(
+        Type thingDefType,
+        IServiceCollection services)
     {
-        ThingType = thingType;
+        ThingDefType = thingDefType;
         Services = services;
     }
 
-    public Type ThingType { get; }
+    public Type ThingDefType { get; }
+
     public IServiceCollection Services { get; }
 }
