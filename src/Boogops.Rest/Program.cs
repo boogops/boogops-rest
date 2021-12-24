@@ -10,7 +10,6 @@ builder.Services.AddBoogopsManager<ThingDef>()
     {
         o.ConnectionString = builder.Configuration["mongodb:connection_string"];
         o.Database = builder.Configuration["mongodb:database"];
-        o.Collection = builder.Configuration["mongodb:collection"];
     });
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
