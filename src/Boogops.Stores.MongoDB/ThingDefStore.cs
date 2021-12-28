@@ -12,11 +12,11 @@ public class ThingDefStore<TThingDef> : Stores.ThingDefStore<TThingDef>
     {
         _thingDefsMongoCollection = getThingDefsMongoCollection.Get();
     }
-    
+
     public override async Task<BoogopsManagerResult> CreateAsync(TThingDef thingDef)
     {
         var retval = BoogopsManagerResult.Success;
-        
+
         try
         {
             await _thingDefsMongoCollection.InsertOneAsync(thingDef);
@@ -25,7 +25,7 @@ public class ThingDefStore<TThingDef> : Stores.ThingDefStore<TThingDef>
         {
             retval = BoogopsManagerResult.Failed(new BoogopsManagerError { Description = e.Message });
         }
-        
+
         return retval;
     }
 }

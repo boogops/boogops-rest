@@ -4,6 +4,5 @@ namespace Boogops.Stores.MongoDB;
 
 public class ThingDef : Stores.ThingDef
 {
-    [BsonId]
-    public string Id { get; set; }
+    [BsonId] public string Id { get; set; }
 }

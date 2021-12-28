@@ -8,7 +8,6 @@ namespace Boogops.Core.Tests;
 public class ThingDefManagerTests
 {
     private readonly ThingDefManager<TestThingDef> _thingDefManager;
-
     private readonly Mock<ITestThingDefStore> _thingDefStoreMock;
 
     public ThingDefManagerTests()

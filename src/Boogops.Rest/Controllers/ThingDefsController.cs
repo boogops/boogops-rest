@@ -10,11 +10,11 @@ namespace Boogops.Rest.Controllers;
 [Route("api/[controller]")]
 public class ThingDefsController : Controller
 {
-    private readonly ThingDefManager<ThingDef> _thingDefManager;
     private readonly IMapper _mapper;
+    private readonly ThingDefManager<ThingDef> _thingDefManager;
 
     public ThingDefsController(
-        ThingDefManager<ThingDef> thingDefManager, 
+        ThingDefManager<ThingDef> thingDefManager,
         IMapper mapper)
     {
         _thingDefManager = thingDefManager;
@@ -26,17 +26,15 @@ public class ThingDefsController : Controller
     {
         var entity = _mapper.Map<ThingDef>(dto);
         var result = await _thingDefManager.CreateAsync(entity);
-        
+
         if (!result.Succeeded)
-        {
             // need to bring in Serilog
             // foreach (var error in result.Errors)
             // {
             //     _logger.Error(error.Description);
             // }
-        
+
             throw new Exception("Unable to persist ThingDef.");
-        }
 
         return Created($"api/ThingDefs/{entity.Id}", entity);
     }

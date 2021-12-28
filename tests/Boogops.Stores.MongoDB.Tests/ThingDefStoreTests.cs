@@ -9,6 +9,9 @@ namespace Boogops.Stores.MongoDB.Tests;
 
 public class ThingDefStoreTests
 {
+    private readonly Mock<IMongoCollection<ThingDef>> _mongoCollectionMock;
+    private readonly ThingDefManager<ThingDef> _thingDefManager;
+
     public ThingDefStoreTests()
     {
         _mongoCollectionMock = new Mock<IMongoCollection<ThingDef>>();
@@ -20,9 +23,6 @@ public class ThingDefStoreTests
         _thingDefManager = new ThingDefManager<ThingDef>(
             new ThingDefStore<ThingDef>(metasMongoCollectionMock.Object));
     }
-
-    private readonly Mock<IMongoCollection<ThingDef>> _mongoCollectionMock;
-    private readonly ThingDefManager<ThingDef> _thingDefManager;
 
     [Fact]
     public async Task Create_CreatesMeta()
