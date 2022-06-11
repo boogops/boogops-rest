@@ -1,7 +1,6 @@
 using AutoMapper;
 using Boogops.Common.Dtos;
-using Boogops.Core;
-using Boogops.Stores.MongoDB;
+using Boogops.MongoDbCore;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Boogops.Rest.Controllers;
@@ -11,10 +10,9 @@ namespace Boogops.Rest.Controllers;
 public class ThingDefsController : Controller
 {
     private readonly IMapper _mapper;
-    private readonly ThingDefManager<ThingDef> _thingDefManager;
+    private readonly Core.ThingDefManager<ThingDef> _thingDefManager;
 
-    public ThingDefsController(
-        ThingDefManager<ThingDef> thingDefManager,
+    public ThingDefsController(Core.ThingDefManager<ThingDef> thingDefManager,
         IMapper mapper)
     {
         _thingDefManager = thingDefManager;
@@ -33,8 +31,9 @@ public class ThingDefsController : Controller
             // {
             //     _logger.Error(error.Description);
             // }
-
+        {
             throw new Exception("Unable to persist ThingDef.");
+        }
 
         return Created($"api/ThingDefs/{entity.Id}", entity);
     }

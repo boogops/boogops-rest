@@ -4,8 +4,9 @@ using FluentAssertions;
 using MongoDB.Driver;
 using Moq;
 using Xunit;
+using ThingDefStore = Boogops.MongoDbCore.ThingDefStore<Boogops.MongoDbCore.ThingDef>;
 
-namespace Boogops.Stores.MongoDB.Tests;
+namespace Boogops.MongoDbCore.Tests;
 
 public class ThingDefStoreTests
 {
@@ -21,7 +22,7 @@ public class ThingDefStoreTests
             .Returns(_mongoCollectionMock.Object);
 
         _thingDefManager = new ThingDefManager<ThingDef>(
-            new ThingDefStore<ThingDef>(metasMongoCollectionMock.Object));
+            new ThingDefStore(metasMongoCollectionMock.Object));
     }
 
     [Fact]

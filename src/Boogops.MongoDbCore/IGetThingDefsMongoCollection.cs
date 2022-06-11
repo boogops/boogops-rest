@@ -1,6 +1,6 @@
 using MongoDB.Driver;
 
-namespace Boogops.Stores.MongoDB;
+namespace Boogops.MongoDbCore;
 
 public interface IGetThingDefsMongoCollection<TThingDef>
 {

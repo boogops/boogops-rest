@@ -1,4 +1,4 @@
-namespace Boogops.Stores;
+namespace Boogops.Core;
 
 public class PropDef
 {

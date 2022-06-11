@@ -1,6 +1,4 @@
-using Boogops.Core;
-
-namespace Boogops.Stores;
+namespace Boogops.Core;
 
 public abstract class ThingDefStore<TThingDef> : IThingDefStore<TThingDef>
     where TThingDef : ThingDef

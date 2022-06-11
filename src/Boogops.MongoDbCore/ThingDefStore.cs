@@ -1,9 +1,9 @@
 using Boogops.Core;
 using MongoDB.Driver;
 
-namespace Boogops.Stores.MongoDB;
+namespace Boogops.MongoDbCore;
 
-public class ThingDefStore<TThingDef> : Stores.ThingDefStore<TThingDef>
+public class ThingDefStore<TThingDef> : Core.ThingDefStore<TThingDef>
     where TThingDef : ThingDef
 {
     private readonly IMongoCollection<TThingDef> _thingDefsMongoCollection;

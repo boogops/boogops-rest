@@ -1,4 +1,4 @@
-namespace Boogops.Stores.MongoDB;
+namespace Boogops.MongoDbCore;
 
 public class StoreOptions
 {

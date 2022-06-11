@@ -1,7 +1,7 @@
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
 
-namespace Boogops.Stores.MongoDB;
+namespace Boogops.MongoDbCore;
 
 internal class GetMongoClient : IGetMongoClient
 {

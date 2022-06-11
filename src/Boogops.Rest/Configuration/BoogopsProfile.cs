@@ -1,7 +1,7 @@
 using AutoMapper;
 using Boogops.Common.Dtos;
-using Boogops.Stores;
-using ThingDef = Boogops.Stores.MongoDB.ThingDef;
+using Boogops.Core;
+using ThingDef = Boogops.MongoDbCore.ThingDef;
 
 namespace Boogops.Rest.Configuration;
 
