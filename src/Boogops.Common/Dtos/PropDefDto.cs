@@ -1,8 +1,6 @@
 namespace Boogops.Common.Dtos;
 
-public class PropDefDto
-{
-    public string Name { get; set; }
-
-    public string PropType { get; set; }
-}
+public readonly record struct PropDefDto(
+    string Name, 
+    string PropType
+    );

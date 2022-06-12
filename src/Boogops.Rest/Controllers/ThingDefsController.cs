@@ -1,7 +1,8 @@
 using AutoMapper;
 using Boogops.Common.Dtos;
-using Boogops.MongoDbCore;
+using Boogops.Core;
 using Microsoft.AspNetCore.Mvc;
+using ThingDef = Boogops.MongoDbCore.ThingDef;
 
 namespace Boogops.Rest.Controllers;
 
@@ -10,10 +11,9 @@ namespace Boogops.Rest.Controllers;
 public class ThingDefsController : Controller
 {
     private readonly IMapper _mapper;
-    private readonly Core.ThingDefManager<ThingDef> _thingDefManager;
+    private readonly ThingDefManager<ThingDef> _thingDefManager;
 
-    public ThingDefsController(Core.ThingDefManager<ThingDef> thingDefManager,
-        IMapper mapper)
+    public ThingDefsController(ThingDefManager<ThingDef> thingDefManager, IMapper mapper)
     {
         _thingDefManager = thingDefManager;
         _mapper = mapper;
@@ -25,16 +25,14 @@ public class ThingDefsController : Controller
         var entity = _mapper.Map<ThingDef>(dto);
         var result = await _thingDefManager.CreateAsync(entity);
 
-        if (!result.Succeeded)
-            // need to bring in Serilog
-            // foreach (var error in result.Errors)
-            // {
-            //     _logger.Error(error.Description);
-            // }
-        {
-            throw new Exception("Unable to persist ThingDef.");
-        }
+        if (result.Succeeded)
+            return Created($"api/ThingDefs/{entity.Id}", entity);
 
-        return Created($"api/ThingDefs/{entity.Id}", entity);
+        // need to bring in Serilog
+        // foreach (var error in result.Errors)
+        // {
+        //     _logger.Error(error.Description);
+        // }
+        throw new Exception("Unable to persist ThingDef.");
     }
 }

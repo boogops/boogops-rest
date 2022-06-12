@@ -1,8 +1,6 @@
 namespace Boogops.Common.Dtos;
 
-public class ThingDefDto
-{
-    public string Id { get; set; }
-
-    public IEnumerable<PropDefDto> PropDefs { get; set; }
-}
+public readonly record struct ThingDefDto(
+    string Id,
+    IEnumerable<PropDefDto> PropDefs
+    );

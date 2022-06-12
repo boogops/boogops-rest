@@ -4,8 +4,7 @@ namespace Boogops.Core.Extensions.DependencyInjection;
 
 public static class BoogopsManagerServiceCollectionExtensions
 {
-    public static BoogopsManagerBuilder AddBoogopsManager<TThingDef>(
-        this IServiceCollection services)
+    public static BoogopsManagerBuilder AddBoogopsManager<TThingDef>(this IServiceCollection services)
         where TThingDef : class
     {
         services.AddScoped<ThingDefManager<TThingDef>>();
