@@ -29,7 +29,7 @@ public class ThingDefStoreTests
     public async Task Create_CreatesMeta()
     {
         // Arrange
-        var thingDef = new ThingDef { Id = "Bo Bandy" };
+        var thingDef = new ThingDef { Id = default };
 
         // Act
         var documentResult = await _thingDefManager.CreateAsync(thingDef);
