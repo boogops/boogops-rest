@@ -3,17 +3,17 @@ using MongoDB.Driver;
 
 namespace Boogops.MongoDbCore;
 
-public class ThingDefStore<TThingDef> : Core.ThingDefStore<TThingDef>
+public class ThingDefCreator<TThingDef> : ICreateThingDef<TThingDef>
     where TThingDef : ThingDef
 {
-    private readonly IMongoCollection<TThingDef> _thingDefsMongoCollection;
+    private readonly IMongoCollectionFacade<TThingDef> _thingDefsMongoCollection;
 
-    public ThingDefStore(IGetThingDefsMongoCollection<TThingDef> getThingDefsMongoCollection)
+    public ThingDefCreator(IGetThingDefsMongoCollection<TThingDef> getThingDefsMongoCollection)
     {
         _thingDefsMongoCollection = getThingDefsMongoCollection.Get();
     }
 
-    public override async Task<BoogopsManagerResult> CreateAsync(TThingDef thingDef)
+    public async Task<BoogopsManagerResult> CreateAsync(TThingDef thingDef)
     {
         var retval = BoogopsManagerResult.Success;
 

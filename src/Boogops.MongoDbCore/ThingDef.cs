@@ -6,5 +6,6 @@ namespace Boogops.MongoDbCore;
 public class ThingDef : Core.ThingDef
 {
     [BsonId]
-    public ObjectId Id { get; set; }
+    [BsonRepresentation(BsonType.ObjectId)]
+    public string Id { get; set; }
 }

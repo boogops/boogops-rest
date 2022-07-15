@@ -17,8 +17,8 @@ public static class BoogopsManagerBuilderExtensions
         builder.Services.AddScoped<IGetMongoClient, GetMongoClient>();
         builder.Services.AddScoped(typeof(IGetThingDefsMongoCollection<>).MakeGenericType(builder.ThingDefType),
             typeof(GetThingDefsMongoCollection<>).MakeGenericType(builder.ThingDefType));
-        builder.Services.AddScoped(typeof(IThingDefStore<>).MakeGenericType(builder.ThingDefType),
-            typeof(ThingDefStore<>).MakeGenericType(builder.ThingDefType));
+        // builder.Services.AddScoped(typeof(IThingDefStore<>).MakeGenericType(builder.ThingDefType),
+        //     typeof(ThingDefStore<>).MakeGenericType(builder.ThingDefType));
         return builder;
     }
 }

@@ -4,5 +4,5 @@ namespace Boogops.MongoDbCore;
 
 public interface IGetThingDefsMongoCollection<TThingDef>
 {
-    IMongoCollection<TThingDef> Get();
+    IMongoCollectionFacade<TThingDef> Get();
 }

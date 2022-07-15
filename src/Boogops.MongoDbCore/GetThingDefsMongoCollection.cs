@@ -12,16 +12,17 @@ internal class GetThingDefsMongoCollection<TThingDef> : IGetThingDefsMongoCollec
 
     public GetThingDefsMongoCollection(
         IOptions<StoreOptions> options,
-        IGetMongoClient getMongoClient)
+        IGetMongoClient mongoClientGetter)
     {
         _database = options.Value.Database;
-        _mongoClient = getMongoClient.Get();
+        _mongoClient = mongoClientGetter.Get();
     }
 
-    public IMongoCollection<TThingDef> Get()
+    public IMongoCollectionFacade<TThingDef> Get()
     {
         var database = _mongoClient.GetDatabase(_database);
-        var retval = database.GetCollection<TThingDef>(COLLECTION);
+        var mongoCollection = database.GetCollection<TThingDef>(COLLECTION);
+        var retval = new MongoCollectionFacade<TThingDef>(mongoCollection);
         return retval;
     }
 }
