@@ -1,5 +1,4 @@
 using Boogops.Core;
-using MongoDB.Driver;
 
 namespace Boogops.MongoDbCore;
 
